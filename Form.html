@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://kit.fontawesome.com/a6cfec0f45.js" crossorigin="anonymous"></script>
+    <style>
+    table, th, td {
+  border: 3px solid #dddddd;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+  }
+  body {
+    color:gray;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 15px;
+    background-color:#222222;
+  }
+  .Container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 400px;
+  }
+  .tittle{
+    text-decoration:none;
+    color:inherit;
+  }
+  .tittle:hover{
+    color:#c4aa38;
+  }
+  .value{
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    margin: 10px 0;
+    background: transparent;
+  }
+  .button{
+    font-size:20px;
+    margin:30px 10px;
+    width:100px;
+    height:50px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: gray;
+  }
+  .button:focus {
+      outline: none;
+  }
+    </style>
+  </head>
+
+  <body>
+
+    <h1><a href="https://www.patreon.com/zniti" class="tittle" target="_blank">Click&nbsp  To&nbsp Support&nbsp <i class="fas fa-donate"></i></a></h1>
+
+    <form>
+
+
+      <div class="Container">
+        <input type="text" class="value" placeholder="First name" id="fname"><br>
+        <input type="text" class="value" placeholder="Last name" id="lname"><br>
+        <input type="text" class="value" placeholder="Date of birth" id="date"><br>
+        <input type="text" class="value" placeholder="Place of birth" id="place"><br>
+        <input type="text" class="value" placeholder="Phone number" id="tel"><br>
+        <input type="text" class="value" placeholder="address" id="address"><br>
+      </div>
+
+    <center>
+      <button type="button" class="button" onclick="formulaire()">Add</button>
+    </center>
+  </form>
+
+
+
+<table id="mytable">
+  <tr>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Date Of Birth</td>
+    <td>Place Of Birth</td>
+    <td>Phone Number</td>
+    <td>Address</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+    class Member{
+      constructor(a,b,x,c,d,e){
+      this.fname=a;
+      this.lname=b;
+      this.date=x;
+      this.place=c;
+      this.tel=d;
+      this.address=e;
+
+    }
+    }
+
+      function formulaire(){
+
+
+
+
+
+
+      let member = new Member(
+      document.getElementById('fname').value,
+      document.getElementById('lname').value,
+      document.getElementById('date').value,
+      document.getElementById('place').value,
+      document.getElementById('tel').value,
+      document.getElementById('address').value
+      );
+
+
+      // Création de la ligne
+    TR = document.createElement ("tr");
+
+    // Création de la première cellule
+    TD1  = document.createElement ("td");
+    TXT1 = document.createTextNode (member.fname);
+    TD1.appendChild (TXT1);
+
+    // Création de la deuxième cellule
+    TD2  = document.createElement ("td");
+    TXT2 = document.createTextNode (member.lname);
+    TD2.appendChild (TXT2);
+
+    // Création de la 3eme cellule
+    TD3  = document.createElement ("td");
+    TXT3 = document.createTextNode (member.date);
+    TD3.appendChild (TXT3);
+
+    // Création de la 4eme cellule
+    TD4  = document.createElement ("td");
+    TXT4 = document.createTextNode (member.place);
+    TD4.appendChild (TXT4);
+
+    // Création de la 5eme cellule
+    TD5  = document.createElement ("td");
+    TXT5 = document.createTextNode (member.tel);
+    TD5.appendChild (TXT5);
+
+    // Création de la 6eme cellule
+    TD6  = document.createElement ("td");
+    TXT6 = document.createTextNode (member.address);
+    TD6.appendChild (TXT6);
+
+    // On assemble les cellules a la ligne
+    TR.appendChild(TD1);
+    TR.appendChild(TD2);
+    TR.appendChild(TD3);
+    TR.appendChild(TD4);
+    TR.appendChild(TD5);
+    TR.appendChild(TD6);
+
+    // On assemble la ligne au tableau
+    document.getElementById ('mytable').appendChild (TR);
+
+    document.getElementById('fname').value = '';
+    document.getElementById('lname').value = '';
+    document.getElementById('date').value = '';
+    document.getElementById('place').value = '';
+    document.getElementById('tel').value = '';
+    document.getElementById('address').value = '';
+
+
+
+
+
+      }
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
